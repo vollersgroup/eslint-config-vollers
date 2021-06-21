@@ -1,0 +1,11 @@
+{
+  "name": "eslint-config-cropster",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared eslint config for all apps.",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.10.0"
+  }
+}
