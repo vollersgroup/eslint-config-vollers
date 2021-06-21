@@ -1,11 +1,14 @@
 {
-  "name": "eslint-config-cropster",
+  "name": "@vollersgroup/eslint-config-vollers",
   "version": "1.0.0",
-  "private": true,
+  "license": "UNLICENSED",
   "description": "Shared eslint config for all apps.",
   "main": "index.js",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
