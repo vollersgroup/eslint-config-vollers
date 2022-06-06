@@ -1,26 +1,32 @@
 module.exports = {
   root: true,
-  parser: "@babel/eslint-parser",
+  parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       legacyDecorators: true,
+      decorators: true
     },
+    babelOptions: {
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: false }]
+      ]
+    }
   },
-  plugins: ["ember"],
+  plugins: ['ember'],
   extends: [
-    "eslint:recommended",
-    "plugin:ember/recommended",
-    "prettier/prettier",
+    'eslint:recommended',
+    'plugin:ember/recommended',
+    'prettier/prettier'
   ],
   env: {
-    browser: true,
+    browser: true
   },
   rules: {
     'ember/closure-actions': 'off',
-    "ember/no-get": "off",
+    'ember/no-get': 'off',
     'ember/no-side-effects': 'off',
     'ember/no-observers': 'off',
     'ember/no-deeply-nested-dependent-keys-with-each': 'off'
@@ -39,13 +45,13 @@ module.exports = {
         'server/**/*.js'
       ],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script'
       },
       env: {
         browser: false,
-        node: true,
+        node: true
       },
-      plugins: ["node"],
+      plugins: ['node'],
       rules: Object.assign(
         {},
         require('eslint-plugin-node').configs.recommended.rules,
