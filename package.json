@@ -1,6 +1,6 @@
 {
   "name": "@vollersgroup/eslint-config-vollers",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.5",
   "license": "UNLICENSED",
   "description": "Shared eslint config for all apps.",
   "main": "index.js",

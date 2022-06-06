@@ -11,7 +11,7 @@ module.exports = {
     },
     babelOptions: {
       plugins: [
-        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: false }]
+        ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true }]
       ]
     }
   },
