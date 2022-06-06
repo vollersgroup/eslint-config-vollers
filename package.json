@@ -1,14 +1,19 @@
 {
   "name": "@vollersgroup/eslint-config-vollers",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0-alpha.1",
   "license": "UNLICENSED",
   "description": "Shared eslint config for all apps.",
   "main": "index.js",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
+  "peerDependencies": {
+    "@babel/core": ">= 7.0"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": ">= 7.",
+    "@graphql-eslint/eslint-plugin": "^3.10.4",
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-ember": "^10.6.1",
-    "eslint-plugin-prettier": "^4.0.0"
+    "eslint-plugin-node": "^11.1.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

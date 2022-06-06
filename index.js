@@ -1,7 +1,8 @@
 module.exports = {
   root: true,
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   parserOptions: {
+    requireConfigFile: false,
     ecmaVersion: 2018,
     sourceType: "module",
     ecmaFeatures: {
@@ -12,31 +13,39 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:ember/recommended",
-    "plugin:prettier/recommended"
+    "prettier/prettier",
   ],
   env: {
     browser: true,
   },
   rules: {
-    "ember/no-mixins": "off",
+    'ember/closure-actions': 'off',
     "ember/no-get": "off",
-    "ember/use-ember-data-rfc-395-imports": "off",
-    "ember/require-computed-property-dependencies": "off",
+    'ember/no-side-effects': 'off',
+    'ember/no-observers': 'off',
+    'ember/no-deeply-nested-dependent-keys-with-each': 'off'
   },
   overrides: [
+    //graphql files
+    {
+      "files": ["*.graphql"],
+      "parser": "@graphql-eslint/eslint-plugin",
+      "plugins": ["@graphql-eslint"],
+      "rules": {
+        "@graphql-eslint/known-type-names": "error"
+      }
+    },
     // node files
     {
       files: [
-        ".eslintrc.js",
-        ".template-lintrc.js",
-        "ember-cli-build.js",
-        "make-a-release.js",
-        "testem.js",
-        "blueprints/*/index.js",
-        "config/**/*.js",
-        "tests/dummy/config/**/*.js",
-        "lib/**/*.js",
-        "index.js",
+        '.eslintrc.js',
+        '.template-lintrc.js',
+        'ember-cli-build.js',
+        'testem.js',
+        'blueprints/*/index.js',
+        'config/**/*.js',
+        'lib/*/index.js',
+        'server/**/*.js'
       ],
       parserOptions: {
         sourceType: "script",
@@ -46,12 +55,17 @@ module.exports = {
         node: true,
       },
       plugins: ["node"],
-    },
-    {
-      files: ["**/tests/**/*.js", "**/engine.js", "**/app.js", "**/index.js"],
-      rules: {
-        "ember/avoid-leaking-state-in-ember-objects": "off",
-      },
-    },
-  ],
+      rules: Object.assign(
+        {},
+        require('eslint-plugin-node').configs.recommended.rules,
+        {
+          // add your custom rules and overrides for node files here
+
+          // this can be removed once the following is fixed
+          // https://github.com/mysticatea/eslint-plugin-node/issues/77
+          'node/no-unpublished-require': 'off'
+        }
+      )
+    }
+  ]
 };
