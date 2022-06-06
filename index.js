@@ -26,15 +26,6 @@ module.exports = {
     'ember/no-deeply-nested-dependent-keys-with-each': 'off'
   },
   overrides: [
-    //graphql files
-    {
-      "files": ["*.graphql"],
-      "parser": "@graphql-eslint/eslint-plugin",
-      "plugins": ["@graphql-eslint"],
-      "rules": {
-        "@graphql-eslint/known-type-names": "error"
-      }
-    },
     // node files
     {
       files: [
