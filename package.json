@@ -1,6 +1,6 @@
 {
   "name": "@vollersgroup/eslint-config-vollers",
-  "version": "2.0.0-alpha.5",
+  "version": "2.0.0-alpha.6",
   "license": "UNLICENSED",
   "description": "Shared eslint config for all apps.",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "@babel/core": ">= 7.0"
   },
   "dependencies": {
-    "@babel/eslint-parser": ">= 7.",
+    "@babel/eslint-parser": "^7.18.2",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-ember": "^10.6.1",
